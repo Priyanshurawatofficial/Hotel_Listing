@@ -1,0 +1,70 @@
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+
+     <div class="row">
+
+    <div class="col-8 offset-2 mt-3">
+
+    
+
+    <h3>Edit your listing</h3>
+    <form action="/listings/<%=listing1.id%>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="mb-1.5">
+        <label for="title" class="form-label" >Title</label>
+        <input type="text" name="listing[title]" value="<%=listing1.title%>" class="form-control" required> 
+      </div>
+    
+
+       
+       
+      <div class="mb-1.5">
+        <label for="description" class="form-label" >Description</label>
+        <textarea type="text" name="listing[description]" class="form-control" required > <%=listing1.description%>  </textarea>
+      </div>
+    
+      <div class="mb-1.5 ">
+        <img src="<%=listing1.image.url%>" alt="" style="height: 15rem; width:15rem;">
+      </div>
+         
+
+
+      <div class="mb-1.5">
+        <label for="image" class="form-label">Upload new image</label>
+        <input type="file"  value="<%=originalurl%>" class="form-control" > 
+      </div>
+    
+
+    <div class="row">
+  
+      <div class="mb-1.5 col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" name="listing[price]" class="form-control"  value="<%=listing1.price%>" required>  
+      </div>
+   
+   
+      <div class="mb-1.5 col-md-8">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listing[country]" class="form-control" value="<%=listing1.country%>" required>  
+      </div>
+
+
+
+    </div>
+
+
+      
+    
+      <div class="mb-1.5">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" name="listing[location]" class="form-control" value="<%=listing1.location%>" required>  
+      </div>
+   
+   <br> 
+  <button class="edit-btn btn-dark btn"> EDIT</button>
+  <br><br>
+
+    </form>
+  </div>
+</div>
+   <script src="/script.js"></script>
+</body>
