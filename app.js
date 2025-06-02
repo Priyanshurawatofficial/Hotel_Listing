@@ -123,6 +123,12 @@ app.use((req, res, next) => {
  })
 
 
+app.get("/", async (req, res) => {
+  const alllistings = await listing.find({});
+  res.render("listings.ejs", { alllistings });
+});
+
+
 
 app.use("/listings",listings);
 app.use("/listings/:id/reviews",reviews);
