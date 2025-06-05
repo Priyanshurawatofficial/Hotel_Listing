@@ -31,7 +31,7 @@ module.exports.login=(req,res)=>{
 };
 
 module.exports.logincheck=async(req,res)=>{
-    req.flash("success","welcome to Wanderl ust you are welcome");
+    req.flash("success","Welcome to Wanderlust Hotel listing platform");
     let redirectUrl=res.locals.redirectUrl || "/listings"
     res.redirect(redirectUrl);
    }
